@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\KiralamaBusiness.cs" />
     <Compile Include="Entities\KiralamaBilgisi.cs" />
     <Compile Include="Entities\Kitap.cs" />
     <Compile Include="Entities\Uye.cs" />
@@ -77,10 +78,23 @@
     <Compile Include="Migrations\201812280816060_kiralamas.Designer.cs">
       <DependentUpon>201812280816060_kiralamas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812310956421_afafdf.cs" />
+    <Compile Include="Migrations\201812310956421_afafdf.Designer.cs">
+      <DependentUpon>201812310956421_afafdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812311001433_degis.cs" />
+    <Compile Include="Migrations\201812311001433_degis.Designer.cs">
+      <DependentUpon>201812311001433_degis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812311007116_degişl.cs" />
+    <Compile Include="Migrations\201812311007116_degişl.Designer.cs">
+      <DependentUpon>201812311007116_degişl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VİEWMODELS\KiralamaViewModel.cs" />
     <Compile Include="VİEWMODELS\KitapViewModel.cs" />
     <Compile Include="VİEWMODELS\UyeViewModel.cs" />
     <Compile Include="VİEWMODELS\YazarViewModel.cs" />
@@ -95,6 +109,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812280816060_kiralamas.resx">
       <DependentUpon>201812280816060_kiralamas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812310956421_afafdf.resx">
+      <DependentUpon>201812310956421_afafdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812311001433_degis.resx">
+      <DependentUpon>201812311001433_degis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812311007116_degişl.resx">
+      <DependentUpon>201812311007116_degişl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

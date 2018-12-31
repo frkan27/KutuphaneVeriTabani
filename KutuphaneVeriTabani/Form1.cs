@@ -1,4 +1,5 @@
-﻿using KutuphaneVeriTabani.VİEWMODELS;
+﻿using KutuphaneVeriTabani.Business;
+using KutuphaneVeriTabani.VİEWMODELS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,9 +37,9 @@ namespace KutuphaneVeriTabani
             lstUyeler.DataSource = db.Uyeler
                 .OrderBy(x => x.UyeAdi)
                 .ThenBy(x => x.UyeSoyadi)
-                .Where(x => x.KitabıVarMi == false)
                 .Select(x => new UyeViewModel
                 {
+
                     UyeAdi = x.UyeAdi,
                     UyeSoyadi = x.UyeSoyadi,
                     UyeID = x.UyeID,
@@ -56,6 +57,7 @@ namespace KutuphaneVeriTabani
                 .ThenBy(x => x.YazarSoyad)
                 .Select(x => new YazarViewModel
                 {
+
                     YazarID = x.YazarID,
                     YazarAd = x.YazarAd,
                     YazarSoyad = x.YazarSoyad
@@ -84,14 +86,61 @@ namespace KutuphaneVeriTabani
 
             if (lstYazarlar.SelectedItem == null) return;
             seciliYazar = lstYazarlar.SelectedItem as YazarViewModel;
-                lstKitaplar.DataSource = db.Kitaplar
-                        .Where(x => x.YazarID == seciliYazar.YazarID)
-                        .OrderBy(x => x.KitapAdi)
-                        .Select(x => new KitapViewModel
-                        {
-                            KitapAdi = x.KitapAdi,
-                            Adet = x.Adet
-                        }).ToList();
+            lstKitaplar.DataSource = db.Kitaplar
+                    .Where(x => x.YazarID == seciliYazar.YazarID)
+                    .OrderBy(x => x.KitapAdi)
+                    .Select(x => new KitapViewModel
+                    {
+                        KitapAdi = x.KitapAdi,
+                        Adet = x.Adet
+                    }).ToList();
+
+
+
+        }
+
+        private void btnKirala_Click(object sender, EventArgs e)
+        {
+            if (lstUyeler.SelectedItem == null) return;
+            if (lstKitaplar.SelectedItem == null) return;
+            MyContext db = new MyContext();
+            try
+            {
+                var Business = new KiralamaBusiness();
+                var KiraModel = new KiralamaViewModel()
+                {
+                    UyeID = (lstUyeler.SelectedItem as UyeViewModel).UyeID,
+                    KitapID = (lstKitaplar.SelectedItem as KitapViewModel).KitapID,
+                    KiralandigiTarih = DateTime.Now,
+                    Adet = (lstKitaplar.SelectedItem as KitapViewModel).Adet
+
+
+                };
+                var kayıt = Business.Kiralama(KiraModel);
+                MessageBox.Show("kayıt tamamlandı");
+                //lstKiralmabilgisi.DataSource = db.Kiralamalar
+                //    .Select(x => new KiralamaViewModel
+                //    {
+                //        UyeAdi =x.UyeAdi,
+                //        UyeSoyadi = x.UyeSoyadi,
+                //        KitapAdi=x.KitapAdi,
+                //        YazarAdi=x.YazarAdi
+                //    })
+                //    .ToList();
+        
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+
 
 
 

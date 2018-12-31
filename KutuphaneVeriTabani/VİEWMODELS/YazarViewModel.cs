@@ -11,6 +11,7 @@ namespace KutuphaneVeriTabani.VİEWMODELS
         public int YazarID { get; set; }
         public string YazarAd { get; set; }
         public string YazarSoyad { get; set; }
+     
 
         public override string ToString() => $"{YazarAd} {YazarSoyad}";
         

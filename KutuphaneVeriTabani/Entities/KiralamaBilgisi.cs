@@ -23,5 +23,9 @@ namespace KutuphaneVeriTabani.Entities
         public virtual Kitap Kitap { get; set; }
         [ForeignKey("UyeID")]
         public virtual Uye Uye { get; set; }
+        public string UyeAdi { get; set; }
+        public string UyeSoyadi { get; set; }
+        public string KitapAdi { get; set; }
+        public string YazarAdi { get; set; }
     }
 }

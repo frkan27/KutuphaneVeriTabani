@@ -36,6 +36,8 @@
             this.btnUyeleriListe = new System.Windows.Forms.Button();
             this.btnYazarlarıListele = new System.Windows.Forms.Button();
             this.btnKitaplarıListele = new System.Windows.Forms.Button();
+            this.btnKirala = new System.Windows.Forms.Button();
+            this.lstKiralmabilgisi = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,11 +113,31 @@
             this.btnKitaplarıListele.UseVisualStyleBackColor = true;
             this.btnKitaplarıListele.Click += new System.EventHandler(this.btnKitaplarıListele_Click);
             // 
+            // btnKirala
+            // 
+            this.btnKirala.Location = new System.Drawing.Point(535, 76);
+            this.btnKirala.Name = "btnKirala";
+            this.btnKirala.Size = new System.Drawing.Size(104, 44);
+            this.btnKirala.TabIndex = 9;
+            this.btnKirala.Text = "Kirala";
+            this.btnKirala.UseVisualStyleBackColor = true;
+            this.btnKirala.Click += new System.EventHandler(this.btnKirala_Click);
+            // 
+            // lstKiralmabilgisi
+            // 
+            this.lstKiralmabilgisi.FormattingEnabled = true;
+            this.lstKiralmabilgisi.Location = new System.Drawing.Point(152, 329);
+            this.lstKiralmabilgisi.Name = "lstKiralmabilgisi";
+            this.lstKiralmabilgisi.Size = new System.Drawing.Size(512, 95);
+            this.lstKiralmabilgisi.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 496);
+            this.Controls.Add(this.lstKiralmabilgisi);
+            this.Controls.Add(this.btnKirala);
             this.Controls.Add(this.btnKitaplarıListele);
             this.Controls.Add(this.btnYazarlarıListele);
             this.Controls.Add(this.btnUyeleriListe);
@@ -144,6 +166,8 @@
         private System.Windows.Forms.Button btnUyeleriListe;
         private System.Windows.Forms.Button btnYazarlarıListele;
         private System.Windows.Forms.Button btnKitaplarıListele;
+        private System.Windows.Forms.Button btnKirala;
+        private System.Windows.Forms.ListBox lstKiralmabilgisi;
     }
 }
 
